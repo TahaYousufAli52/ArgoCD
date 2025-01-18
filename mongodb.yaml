@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mongo
+    app: mongodb-latest
   name: mongodb-latest
   namespace: cipher
 spec:
@@ -26,10 +26,10 @@ spec:
         - containerPort: 27017
         volumeMounts:
         - mountPath: /data/db
-        name: mongo-volume
-        readOnly: false
+          name: mongo-volume
+          readOnly: false
       volumes:
       - name: mongo-volume
-      hostPath:
-        path: /nfs/mongo
-        type: Directory 
+        hostPath:
+          path: /nfs/mongo
+          type: DirectoryOrCreate
