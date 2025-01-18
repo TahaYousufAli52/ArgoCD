@@ -4,7 +4,7 @@ metadata:
   labels:
     app: mongodb-latest
   name: mongo
-  namespace: cipher
+  namespace: argocd-ns
 spec:
   replicas: 1
   selector:
